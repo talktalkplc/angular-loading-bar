@@ -1,4 +1,4 @@
-/*! 
+/*!
  * angular-loading-bar v0.9.0
  * https://chieffancypants.github.io/angular-loading-bar
  * Copyright (c) 2016 Wes Cruver
@@ -21,7 +21,6 @@
 
 // Alias the loading bar for various backwards compatibilities since the project has matured:
 angular.module('angular-loading-bar', ['cfp.loadingBarInterceptor']);
-angular.module('chieffancypants.loadingBar', ['cfp.loadingBarInterceptor']);
 
 
 /**
@@ -132,7 +131,8 @@ angular.module('cfp.loadingBarInterceptor', ['cfp.loadingBar'])
 
         'responseError': function(rejection) {
           if (!rejection || !rejection.config) {
-            $log.error('Broken interceptor detected: Config object not supplied in rejection:\n https://github.com/chieffancypants/angular-loading-bar/pull/50');
+            $log.error('Broken interceptor detected: Config object not supplied in rejection');
+            //https://github.com/chieffancypants/angular-loading-bar/pull/50
             return $q.reject(rejection);
           }
 
